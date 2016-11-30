@@ -7,7 +7,18 @@
 
 import Foundation
 
-
+let arr = CommandLine.arguments
+if arr.count == 2 {
+    let str = arr[1]
+    if str == "-h" {
+        print("输入顺序为 ukey _api_key path")
+        
+    } else if str == "-v" {
+        print("v0.0.1")
+    }
+    
+    exit(0)
+}
 
 if CommandLine.arguments.count != 4 {
     print("输入有误！")
