@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftShell
 
 
 let args = CommandLine.arguments
@@ -20,6 +21,8 @@ let args = CommandLine.arguments
 //    
 //    exit(0)
 //}
+
+try runAndPrint(bash: "open /usr")
 
 let user: UserDefaults = UserDefaults.standard
 
