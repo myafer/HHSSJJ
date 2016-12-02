@@ -22,7 +22,17 @@ let args = CommandLine.arguments
 //    exit(0)
 //}
 
-try runAndPrint(bash: "open /usr")
+let projectPath = "/Users/koudaiwang/Desktop/TTTT"
+let appfile = projectPath + "/build/Release-iphoneos"
+let archivepath = projectPath + "/123.xcarchive"
+let ipapath = projectPath + "/123.ipa"
+run(bash: "cd " + projectPath + "; rm 123.ipa;")
+run(bash: "cd " + projectPath + "; rm 123.xcarchive;")
+try runAndPrint(bash: "cd " + projectPath + ";xcodebuild clean")
+
+try runAndPrint(bash: "cd " + projectPath + ";xcodebuild archive -scheme \"TTTT\" -configuration \"Release\" -archivePath " + archivepath)
+try runAndPrint(bash: "cd " + projectPath + ";xcodebuild -exportArchive -archivePath " + archivepath + " -exportPath " + ipapath + " -exportFormat IPA -exportProvisioningProfile \"com.*\"")
+print("打包成功----" + ipapath)
 
 let user: UserDefaults = UserDefaults.standard
 
@@ -53,27 +63,46 @@ if user.object(forKey: "uKey") == nil {
     api_key = user.object(forKey: "_api_key") as! String
 }
 
-let manager = AFHTTPSessionManager()
-manager.responseSerializer.acceptableContentTypes = NSSet.init(array: ["text/html","text/json","application/json","text/javascript"]) as? Set<String>
-manager.requestSerializer = AFJSONRequestSerializer()
-manager.post("http://www.pgyer.com/apiv1/app/upload", parameters: ["uKey": uKey, "_api_key":api_key], constructingBodyWith: { (formData) in
+
+var count = 3
+let data: NSData? = NSData.init(contentsOfFile: ipapath)
+func upload() {
+    let manager = AFHTTPSessionManager()
+    manager.responseSerializer.acceptableContentTypes = NSSet.init(array: ["text/html","text/json","application/json","text/javascript"]) as? Set<String>
+    manager.requestSerializer = AFJSONRequestSerializer()
+    manager.post("http://www.pgyer.com/apiv1/app/upload", parameters: ["uKey": uKey, "_api_key":api_key], constructingBodyWith: { (formData) in
         let dd:AFMultipartFormData = (formData as AFMultipartFormData)
-        var data: NSData? = NSData.init(contentsOfFile: path)
-        dd.appendPart(withFileData: data as! Data, name: "file", fileName: "123.ipa", mimeType: "")
-    }, progress: { (pro) in
-         print((pro as Progress).fractionCompleted)
-        
-    }, success: { (task, obj) in
-        print(obj)
-        print("成功")
-        user.set(uKey, forKey: "uKey")
-        user.set(api_key, forKey: "_api_key")
-        user.synchronize()
-        exit(0)
+        if data != nil {
+            dd.appendPart(withFileData: data as! Data, name: "file", fileName: "123.ipa", mimeType: "")
+        } else {
+            print("没有有效的ipa文件")
+            exit(0)
+        }
+        }, progress: { (pro) in
+            print((pro as Progress).fractionCompleted)
+            
+        }, success: { (task, obj) in
+            print(obj)
+            print("成功")
+            user.set(uKey, forKey: "uKey")
+            user.set(api_key, forKey: "_api_key")
+            user.synchronize()
+            exit(0)
     }) { (task, error) in
         print("失败", error)
-         exit(0)
+        if count > 0 {
+            print("失败", error)
+            print("-------------正在重新上传-------------")
+            upload()
+            count = count - 1
+        } else {
+            exit(0)
+        }
     }
+}
+
+upload()
+
 
 RunLoop.current.run()
 
