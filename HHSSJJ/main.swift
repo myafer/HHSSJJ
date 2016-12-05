@@ -6,35 +6,41 @@
 //
 
 import Foundation
-import SwiftShell
 
 
 let args = CommandLine.arguments
-//if args.count == 2 {
-//    let str = args[1]
-//    if str == "-h" {
-//        print("输入顺序为 ukey _api_key path")
-//        
-//    } else if str == "-v" {
-//        print("v0.0.1")
-//    }
-//    
-//    exit(0)
-//}
 
 
-
-
+print(args)
 let projectPath = "/Users/koudaiwang/Desktop/TTTT"
+
+
+if args.count < 2 {
+    print("Input error!")
+    exit(0)
+}
+
+let one = args[1]
+
+if one == "init" {
+    JSONFileManager().initAJSONFile(path: projectPath)
+}
+
+
+
+
+
+
 let appfile = projectPath + "/build/Release-iphoneos"
 let archivepath = projectPath + "/123.xcarchive"
 let ipapath = projectPath + "/123.ipa"
+let cerName = "com.*"
 run(bash: "cd " + projectPath + "; rm 123.ipa;")
 run(bash: "cd " + projectPath + "; rm 123.xcarchive;")
 try runAndPrint(bash: "cd " + projectPath + ";xcodebuild clean")
 
 try runAndPrint(bash: "cd " + projectPath + ";xcodebuild archive -scheme \"TTTT\" -configuration \"Release\" -archivePath " + archivepath)
-try runAndPrint(bash: "cd " + projectPath + ";xcodebuild -exportArchive -archivePath " + archivepath + " -exportPath " + ipapath + " -exportFormat IPA -exportProvisioningProfile \"com.*\"")
+try runAndPrint(bash: "cd " + projectPath + ";xcodebuild -exportArchive -archivePath " + archivepath + " -exportPath " + ipapath + " -exportFormat IPA -exportProvisioningProfile" + "\"" + cerName + "\"")
 print("打包成功----" + ipapath)
 
 let user: UserDefaults = UserDefaults.standard
@@ -55,6 +61,7 @@ if CommandLine.arguments.count > 1 {
     }
     
 }
+
 
 var uKey = ""
 var api_key = ""
