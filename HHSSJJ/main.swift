@@ -22,6 +22,9 @@ let args = CommandLine.arguments
 //    exit(0)
 //}
 
+
+
+
 let projectPath = "/Users/koudaiwang/Desktop/TTTT"
 let appfile = projectPath + "/build/Release-iphoneos"
 let archivepath = projectPath + "/123.xcarchive"
