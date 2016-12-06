@@ -16,6 +16,7 @@
 		42040D091DF55E95005C34AB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42040CFE1DF55E94005C34AB /* String.swift */; };
 		42040D0A1DF55E95005C34AB /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42040CFF1DF55E94005C34AB /* Array.swift */; };
 		42040D0B1DF55E95005C34AB /* Lazy-split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42040D001DF55E94005C34AB /* Lazy-split.swift */; };
+		42053AEF1DF6B33100BC361C /* HHSSJJTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42053AEE1DF6B33100BC361C /* HHSSJJTest.swift */; };
 		42528E7B1DEEA3100050178B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42528E7A1DEEA3100050178B /* main.swift */; };
 		42528EA91DEEABBE0050178B /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42528E881DEEABBE0050178B /* AFHTTPSessionManager.m */; };
 		42528EAA1DEEABBE0050178B /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42528E8B1DEEABBE0050178B /* AFNetworkReachabilityManager.m */; };
@@ -57,6 +58,9 @@
 		42040CFE1DF55E94005C34AB /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		42040CFF1DF55E94005C34AB /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = General/Array.swift; sourceTree = "<group>"; };
 		42040D001DF55E94005C34AB /* Lazy-split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Lazy-split.swift"; path = "General/Lazy-split.swift"; sourceTree = "<group>"; };
+		42053AEC1DF6B33100BC361C /* HHSSJJTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHSSJJTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42053AEE1DF6B33100BC361C /* HHSSJJTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSSJJTest.swift; sourceTree = "<group>"; };
+		42053AF01DF6B33100BC361C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42528E771DEEA3100050178B /* HHSSJJ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HHSSJJ; sourceTree = BUILT_PRODUCTS_DIR; };
 		42528E7A1DEEA3100050178B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		42528E871DEEABBE0050178B /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -97,6 +101,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		42053AE91DF6B33100BC361C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42528E741DEEA30F0050178B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,10 +135,20 @@
 			path = "../SwiftShell-master/Sources/SwiftShell";
 			sourceTree = "<group>";
 		};
+		42053AED1DF6B33100BC361C /* HHSSJJTest */ = {
+			isa = PBXGroup;
+			children = (
+				42053AEE1DF6B33100BC361C /* HHSSJJTest.swift */,
+				42053AF01DF6B33100BC361C /* Info.plist */,
+			);
+			path = HHSSJJTest;
+			sourceTree = "<group>";
+		};
 		42528E6E1DEEA30F0050178B = {
 			isa = PBXGroup;
 			children = (
 				42528E791DEEA3100050178B /* HHSSJJ */,
+				42053AED1DF6B33100BC361C /* HHSSJJTest */,
 				42528E781DEEA3100050178B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				42528E771DEEA3100050178B /* HHSSJJ */,
+				42053AEC1DF6B33100BC361C /* HHSSJJTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,6 +233,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		42053AEB1DF6B33100BC361C /* HHSSJJTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42053AF11DF6B33100BC361C /* Build configuration list for PBXNativeTarget "HHSSJJTest" */;
+			buildPhases = (
+				42053AE81DF6B33100BC361C /* Sources */,
+				42053AE91DF6B33100BC361C /* Frameworks */,
+				42053AEA1DF6B33100BC361C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHSSJJTest;
+			productName = HHSSJJTest;
+			productReference = 42053AEC1DF6B33100BC361C /* HHSSJJTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		42528E761DEEA30F0050178B /* HHSSJJ */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42528E7E1DEEA3100050178B /* Build configuration list for PBXNativeTarget "HHSSJJ" */;
@@ -238,6 +277,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Afer;
 				TargetAttributes = {
+					42053AEB1DF6B33100BC361C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4FGU9379L5;
+						ProvisioningStyle = Automatic;
+					};
 					42528E761DEEA30F0050178B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4FGU9379L5;
@@ -259,11 +303,30 @@
 			projectRoot = "";
 			targets = (
 				42528E761DEEA30F0050178B /* HHSSJJ */,
+				42053AEB1DF6B33100BC361C /* HHSSJJTest */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		42053AEA1DF6B33100BC361C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		42053AE81DF6B33100BC361C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42053AEF1DF6B33100BC361C /* HHSSJJTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42528E731DEEA30F0050178B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +363,34 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		42053AF21DF6B33100BC361C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4FGU9379L5;
+				INFOPLIST_FILE = HHSSJJTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.00.HHSSJJTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		42053AF31DF6B33100BC361C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4FGU9379L5;
+				INFOPLIST_FILE = HHSSJJTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.00.HHSSJJTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		42528E7C1DEEA3100050178B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -418,6 +509,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		42053AF11DF6B33100BC361C /* Build configuration list for PBXNativeTarget "HHSSJJTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42053AF21DF6B33100BC361C /* Debug */,
+				42053AF31DF6B33100BC361C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		42528E721DEEA30F0050178B /* Build configuration list for PBXProject "HHSSJJ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

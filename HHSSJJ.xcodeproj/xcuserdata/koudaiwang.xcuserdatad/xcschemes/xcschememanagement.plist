@@ -9,9 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>HHSSJJTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>42053ADF1DF6B2E200BC361C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>42053AEB1DF6B33100BC361C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>42528E761DEEA30F0050178B</key>
 		<dict>
 			<key>primary</key>
