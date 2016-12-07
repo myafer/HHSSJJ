@@ -66,7 +66,7 @@ func buildAndUpload(projectPath: String) {
     do {
         try runAndPrint(bash: "cd " + projectPath + ";xcodebuild clean")
         try runAndPrint(bash: "cd " + projectPath + ";xcodebuild archive -scheme \"\(pgyerModel.scheme!)\" -configuration \"Release\" -archivePath " + archivepath)
-        try runAndPrint(bash: "cd " + projectPath + ";xcodebuild -exportArchive -archivePath " + archivepath + " -exportPath " + ipapath + " -exportFormat IPA -exportProvisioningProfile" + "\"" + cerName + "\"")
+        try runAndPrint(bash: "cd " + projectPath + ";xcodebuild -exportArchive -archivePath " + archivepath + " -exportPath " + ipapath + " -exportFormat IPA -exportProvisioningProfile" + " \"" + cerName + "\"")
         print("Package successful ---- " + ipapath)
         let data: NSData? = NSData.init(contentsOfFile: ipapath)
         upload(ukey: pgyerModel.uKey!, api_key: pgyerModel._api_key!, data: data)
