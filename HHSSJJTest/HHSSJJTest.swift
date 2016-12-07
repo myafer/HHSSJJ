@@ -22,8 +22,8 @@ class HHSSJJTest: XCTestCase {
     }
     
     func testExample() {
-        let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: "/Users/koudaiwang/Desktop/TTTT/HHSSJJ.json"))
-        print(try? JSONSerialization.jsonObject(with: data!, options: []))
+        upload(projectPath: "/Users/koudaiwang/Desktop/TTTT")
+
 
 //        let data = try? Data.init(contentsOf: URL.init(fileURLWithPath:  "/Users/koudaiwang/Desktop/TTTT/HHSSJJ.json"))
         

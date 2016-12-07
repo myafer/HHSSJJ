@@ -11,15 +11,16 @@ import Cocoa
 
 class JSONFileManager: NSObject {
     
-    func initAJSONFile(path: String?) {
+    static func initAJSONFile(path: String?) {
         print(path)
         run(bash: "cd " + path! + "; touch HHSSJJ.json")
-        initJSONDataString(path: path)
+        initJSONDataString(path: path!)
     }
     
-    func initJSONDataString(path: String?) {
+    static func initJSONDataString(path: String?) {
         let configStr = "{ \n\n" +
         " \"proPath\"  : \"Your project path!\", \n" +
+        " \"scheme\"   : \"Your project scheme \", \n" +
         " \"cerName\"  : \"Your cer name\", \n" +
         " \"uKey\"     : \"Your pgyer uKey\", \n" +
         " \"_api_key\" : \"Your pgyer _api_key \" \n" +
@@ -30,26 +31,19 @@ class JSONFileManager: NSObject {
         } catch {
             print(error)
         }
-        getPgyerModel(path: path)
         exit(0)
     }
     
-    func getPgyerModel(path: String?) -> PgyerModel {
-        
-//        NSData *data=[NSData dataWithContentsOfFile:Json_path];
-//        //==JsonObject
-//        
-//        id JsonObject=[NSJSONSerialization JSONObjectWithData:data
-//            options:NSJSONReadingAllowFragments
+    static func getPgyerModel(path: String?) -> PgyerModel {
         let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: path!))
         let modelDic = BaseModel.jsonDataToDic(data: data)
-        print(modelDic)
         return PgyerModel(info: modelDic as NSDictionary?)
     }
 }
 
 class PgyerModel: BaseModel {
     var proPath:  String?
+    var scheme:   String?
     var cerName:  String?
     var uKey:     String?
     var _api_key: String?
@@ -68,52 +62,43 @@ extension BaseModel {
 
 class BaseModel: NSObject {
     
-    var selfDic: NSDictionary?
-    
-    //    lazy var mirror: Mirror = {Mirror(reflecting: self)}()
+    lazy var mirror: Mirror = {Mirror(reflecting: self)}()
     
     init(info: NSDictionary?) {
         super.init()
-        selfDic = info
-        
-        if info == nil {
-            return
-        }
-        
-        var count: UInt32 = 0
-        let properties = class_copyPropertyList(object_getClass(self), &count)
-        
-        for i in 0...(count-1) {
-            let aPro: objc_property_t = properties![Int(i)]!
-            let proName:String! = String(describing: property_getName(aPro));
-            let va = info![proName]
-            let ke = proName
+        for p in mirror.children {
+            
+            let va = info![p.label!]
+            let ke = p.label!
             
             if (va is NSArray || va is NSMutableArray) {
-                self.setValue(va, forKeyPath: ke!)
-            } else if (va is NSDictionary || va is NSMutableDictionary) {
-                //                self.setValue(QdaiBaseModel.init(info: va as? NSDictionary), forKeyPath: ke)
+                self.setValue(va, forKeyPath: ke)
             } else {
-                self.setValue(BaseModel.anyObjectToString(any: ((va == nil ? "" : va) as AnyObject?)!), forKeyPath: ke!)
+                self.setValue(BaseModel.anyObjectToString(any: (va as AnyObject?)!), forKeyPath: ke)
             }
+            
         }
+    }
+    
+    func toDictionary() -> NSMutableDictionary {
+        let mdic: NSMutableDictionary = NSMutableDictionary()
+        for p in mirror.children {
+            mdic.setValue( self.value(forKeyPath: p.label!) , forKeyPath:  p.label!)
+        }
+        
+        return mdic
     }
     
     override var description: String {
-        //        var count: UInt32 = 0
-        //        let properties = class_copyPropertyList(object_getClass(self), &count)
-        //        var restr =     "\n---------------------------  \(self.dynamicType) description \n"
-        //        for p in properties {
-        //            restr = restr + "\(p.label!)    = \(unwrap(p.value))\n"
-        //        }
-        //        restr = restr.stringByReplacingOccurrencesOfString("Optional(", withString: "")
-        //        restr = restr.stringByReplacingOccurrencesOfString(")", withString: "")
-        //        restr = restr + "---------------------------  \(self.dynamicType) end "
-        return "\(type(of: self))"
+        var restr =     "##############  \(type(of: self)) description ###############\n"
+        for p in mirror.children {
+            restr = restr + "\(p.label!)    = \(p.value)\n"    + "----------------------\n"
+        }
+        restr = restr + "######################## description end #######################\n"
+        return restr
     }
     
     class func anyObjectToString(any: AnyObject?) -> String {
-        
         if any is NSNumber {
             return NSString(format: "%@", any as! NSNumber) as String
         } else if any is String {
@@ -124,8 +109,7 @@ class BaseModel: NSObject {
             print("ERROR: Type is error")
             return ""
         }
-    }
-}
+    }}
 
 
 
