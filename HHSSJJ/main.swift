@@ -12,7 +12,6 @@ let args = CommandLine.arguments
 
 
 print(args)
-//let projectPath = "/Users/koudaiwang/Desktop/TTTT"
 
 
 if args.count < 2 {
@@ -60,13 +59,12 @@ func buildAndUpload(projectPath: String) {
     let pgyerModel = JSONFileManager.getPgyerModel(path: projectPath + "/HHSSJJ.json")
     let archivepath = projectPath + "/123.xcarchive"
     let ipapath = projectPath + "/123.ipa"
-    let cerName = "com.*"
     run(bash: "cd " + projectPath + "; rm 123.ipa;")
     run(bash: "cd " + projectPath + "; rm 123.xcarchive;")
     do {
         try runAndPrint(bash: "cd " + projectPath + ";xcodebuild clean")
         try runAndPrint(bash: "cd " + projectPath + ";xcodebuild archive -scheme \"\(pgyerModel.scheme!)\" -configuration \"Release\" -archivePath " + archivepath)
-        try runAndPrint(bash: "cd " + projectPath + ";xcodebuild -exportArchive -archivePath " + archivepath + " -exportPath " + ipapath + " -exportFormat IPA -exportProvisioningProfile" + " \"" + cerName + "\"")
+        try runAndPrint(bash: "cd " + projectPath + ";xcodebuild -exportArchive -archivePath " + archivepath + " -exportPath " + ipapath + " -exportFormat IPA -exportProvisioningProfile " + " \"" + pgyerModel.cerName! + "\"")
         print("Package successful ---- " + ipapath)
         let data: NSData? = NSData.init(contentsOfFile: ipapath)
         upload(ukey: pgyerModel.uKey!, api_key: pgyerModel._api_key!, data: data)
