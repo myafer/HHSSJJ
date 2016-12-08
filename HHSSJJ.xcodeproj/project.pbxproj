@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		422A793E1DF01A730020294D /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422A79391DF01A5E0020294D /* SwiftShell.framework */; };
+		424B75191DF8F8B300E4BB54 /* Bash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B750E1DF8F8B300E4BB54 /* Bash.swift */; };
+		424B751A1DF8F8B300E4BB54 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B750F1DF8F8B300E4BB54 /* Command.swift */; };
+		424B751B1DF8F8B300E4BB54 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75101DF8F8B300E4BB54 /* Context.swift */; };
+		424B751C1DF8F8B300E4BB54 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75111DF8F8B300E4BB54 /* FileHandle.swift */; };
+		424B751D1DF8F8B300E4BB54 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75121DF8F8B300E4BB54 /* Files.swift */; };
+		424B751E1DF8F8B300E4BB54 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75131DF8F8B300E4BB54 /* Stream.swift */; };
+		424B751F1DF8F8B300E4BB54 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75141DF8F8B300E4BB54 /* String.swift */; };
+		424B75201DF8F8B300E4BB54 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75151DF8F8B300E4BB54 /* Array.swift */; };
+		424B75211DF8F8B300E4BB54 /* Lazy-split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75161DF8F8B300E4BB54 /* Lazy-split.swift */; };
+		424B75261DF8F9A200E4BB54 /* JSONFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75251DF8F9A200E4BB54 /* JSONFileManager.swift */; };
 		42528E7B1DEEA3100050178B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42528E7A1DEEA3100050178B /* main.swift */; };
 		42528EA91DEEABBE0050178B /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42528E881DEEABBE0050178B /* AFHTTPSessionManager.m */; };
 		42528EAA1DEEABBE0050178B /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42528E8B1DEEABBE0050178B /* AFNetworkReachabilityManager.m */; };
@@ -26,30 +35,6 @@
 		42528EB71DEEABBE0050178B /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 42528EA81DEEABBE0050178B /* UIWebView+AFNetworking.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		422A79381DF01A5E0020294D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 422A79321DF01A5D0020294D /* SwiftShell.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "_____Product_SwiftShell";
-			remoteInfo = SwiftShell;
-		};
-		422A793A1DF01A5E0020294D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 422A79321DF01A5D0020294D /* SwiftShell.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "_____Product_GeneralTestSuite";
-			remoteInfo = GeneralTestSuite;
-		};
-		422A793C1DF01A5E0020294D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 422A79321DF01A5D0020294D /* SwiftShell.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "_____Product_SwiftShellTestSuite";
-			remoteInfo = SwiftShellTestSuite;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		42528E751DEEA30F0050178B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -63,7 +48,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		422A79321DF01A5D0020294D /* SwiftShell.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftShell.xcodeproj; path = "SwiftShell-master/SwiftShell.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		424B750E1DF8F8B300E4BB54 /* Bash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Bash.swift; sourceTree = "<group>"; };
+		424B750F1DF8F8B300E4BB54 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Command.swift; sourceTree = "<group>"; };
+		424B75101DF8F8B300E4BB54 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Context.swift; sourceTree = "<group>"; };
+		424B75111DF8F8B300E4BB54 /* FileHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandle.swift; sourceTree = "<group>"; };
+		424B75121DF8F8B300E4BB54 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		424B75131DF8F8B300E4BB54 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		424B75141DF8F8B300E4BB54 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		424B75151DF8F8B300E4BB54 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = General/Array.swift; sourceTree = "<group>"; };
+		424B75161DF8F8B300E4BB54 /* Lazy-split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Lazy-split.swift"; path = "General/Lazy-split.swift"; sourceTree = "<group>"; };
+		424B75251DF8F9A200E4BB54 /* JSONFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileManager.swift; sourceTree = "<group>"; };
 		42528E771DEEA3100050178B /* HHSSJJ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HHSSJJ; sourceTree = BUILT_PRODUCTS_DIR; };
 		42528E7A1DEEA3100050178B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		42528E871DEEABBE0050178B /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -107,21 +101,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				422A793E1DF01A730020294D /* SwiftShell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		422A79331DF01A5D0020294D /* Products */ = {
+		424B75181DF8F8B300E4BB54 /* SwiftShell */ = {
 			isa = PBXGroup;
 			children = (
-				422A79391DF01A5E0020294D /* SwiftShell.framework */,
-				422A793B1DF01A5E0020294D /* GeneralTestSuite.xctest */,
-				422A793D1DF01A5E0020294D /* SwiftShellTestSuite.xctest */,
+				424B750E1DF8F8B300E4BB54 /* Bash.swift */,
+				424B750F1DF8F8B300E4BB54 /* Command.swift */,
+				424B75101DF8F8B300E4BB54 /* Context.swift */,
+				424B75111DF8F8B300E4BB54 /* FileHandle.swift */,
+				424B75121DF8F8B300E4BB54 /* Files.swift */,
+				424B75131DF8F8B300E4BB54 /* Stream.swift */,
+				424B75141DF8F8B300E4BB54 /* String.swift */,
+				424B75151DF8F8B300E4BB54 /* Array.swift */,
+				424B75161DF8F8B300E4BB54 /* Lazy-split.swift */,
 			);
-			name = Products;
+			name = SwiftShell;
+			path = "../SwiftShell-master/Sources/SwiftShell";
 			sourceTree = "<group>";
 		};
 		42528E6E1DEEA30F0050178B = {
@@ -143,10 +143,11 @@
 		42528E791DEEA3100050178B /* HHSSJJ */ = {
 			isa = PBXGroup;
 			children = (
-				422A79321DF01A5D0020294D /* SwiftShell.xcodeproj */,
+				424B75181DF8F8B300E4BB54 /* SwiftShell */,
 				42528E851DEEABBE0050178B /* AFNetworking */,
 				42528E7A1DEEA3100050178B /* main.swift */,
 				42528EBD1DEEACDF0050178B /* HHSSJJ-Bridging-Header.h */,
+				424B75251DF8F9A200E4BB54 /* JSONFileManager.swift */,
 			);
 			path = HHSSJJ;
 			sourceTree = "<group>";
@@ -255,12 +256,6 @@
 			mainGroup = 42528E6E1DEEA30F0050178B;
 			productRefGroup = 42528E781DEEA3100050178B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 422A79331DF01A5D0020294D /* Products */;
-					ProjectRef = 422A79321DF01A5D0020294D /* SwiftShell.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				42528E761DEEA30F0050178B /* HHSSJJ */,
@@ -268,42 +263,27 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		422A79391DF01A5E0020294D /* SwiftShell.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwiftShell.framework;
-			remoteRef = 422A79381DF01A5E0020294D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		422A793B1DF01A5E0020294D /* GeneralTestSuite.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GeneralTestSuite.xctest;
-			remoteRef = 422A793A1DF01A5E0020294D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		422A793D1DF01A5E0020294D /* SwiftShellTestSuite.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SwiftShellTestSuite.xctest;
-			remoteRef = 422A793C1DF01A5E0020294D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXSourcesBuildPhase section */
 		42528E731DEEA30F0050178B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				42528EB51DEEABBE0050178B /* UIProgressView+AFNetworking.m in Sources */,
+				424B75261DF8F9A200E4BB54 /* JSONFileManager.swift in Sources */,
 				42528EAB1DEEABBE0050178B /* AFSecurityPolicy.m in Sources */,
+				424B751F1DF8F8B300E4BB54 /* String.swift in Sources */,
+				424B751D1DF8F8B300E4BB54 /* Files.swift in Sources */,
 				42528EB61DEEABBE0050178B /* UIRefreshControl+AFNetworking.m in Sources */,
 				42528EB41DEEABBE0050178B /* UIImageView+AFNetworking.m in Sources */,
 				42528EB71DEEABBE0050178B /* UIWebView+AFNetworking.m in Sources */,
+				424B75211DF8F8B300E4BB54 /* Lazy-split.swift in Sources */,
+				424B751B1DF8F8B300E4BB54 /* Context.swift in Sources */,
+				424B751A1DF8F8B300E4BB54 /* Command.swift in Sources */,
+				424B751C1DF8F8B300E4BB54 /* FileHandle.swift in Sources */,
 				42528E7B1DEEA3100050178B /* main.swift in Sources */,
 				42528EB31DEEABBE0050178B /* UIButton+AFNetworking.m in Sources */,
+				424B751E1DF8F8B300E4BB54 /* Stream.swift in Sources */,
+				424B75191DF8F8B300E4BB54 /* Bash.swift in Sources */,
 				42528EB01DEEABBE0050178B /* AFImageDownloader.m in Sources */,
 				42528EB21DEEABBE0050178B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				42528EAC1DEEABBE0050178B /* AFURLRequestSerialization.m in Sources */,
@@ -311,6 +291,7 @@
 				42528EAE1DEEABBE0050178B /* AFURLSessionManager.m in Sources */,
 				42528EAA1DEEABBE0050178B /* AFNetworkReachabilityManager.m in Sources */,
 				42528EAD1DEEABBE0050178B /* AFURLResponseSerialization.m in Sources */,
+				424B75201DF8F8B300E4BB54 /* Array.swift in Sources */,
 				42528EA91DEEABBE0050178B /* AFHTTPSessionManager.m in Sources */,
 				42528EAF1DEEABBE0050178B /* AFAutoPurgingImageCache.m in Sources */,
 			);
