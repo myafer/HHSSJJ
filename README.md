@@ -10,7 +10,8 @@ Swift 版上传蒲公英 控制台工具
 5. ` ./HHSSJJ -up 工程根目录 ` 第4步上传失败，执行此命令可以重新上传。
 
 # HHSSJJ.json
-` { 
+` 
+{ 
 
  "proPath"  : "当前工程根目录，暂时可以不用写",
  "scheme"   : "scheme 名称",
@@ -18,7 +19,8 @@ Swift 版上传蒲公英 控制台工具
  "uKey"     : "蒲公英的userkey",
  "_api_key" : "蒲公英的 api_key"
  
-} `
+}
+`
 
 # 更多
 
