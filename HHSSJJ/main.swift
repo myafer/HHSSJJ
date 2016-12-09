@@ -5,30 +5,36 @@
 //  Copyright © 2016年 Afer. All rights reserved.
 //
 import Foundation
-
+import Darwin
 
 let args = CommandLine.arguments
+
 
 
 //print(main.arguments)
 
 
+
 func help() {
-    print("")
+    print("\u{1B}[30)m", terminator: "")
     print("|---- Usage: ----------------------------|")
     print("|                                        |")
+    print("\u{1B}[31)m", terminator: "")
     print("| 1. Use -init to creat json file.       |")
     print("| 2. Modify json file to you config.     |")
+    print("\u{1B}[32)m", terminator: "")
     print("|                                        |")
     print("|---- Commands: -------------------------|")
+    print("\u{1B}[33)m", terminator: "")
     print("|                                        |")
     print("| -init  init json file.                 |")
     print("| -bu    build and upload to pgyer.      |")
     print("| -b     build.                          |")
+    print("\u{1B}[34)m", terminator: "")
     print("| -up    upload to pgyer.                |")
     print("| -h     print help.                     |")
     print("|________________________________________|")
-    print("")
+    print("\u{1B}[0)m")
     exit(0)
 }
 
