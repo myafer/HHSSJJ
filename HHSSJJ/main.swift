@@ -10,7 +10,7 @@ import Foundation
 let args = CommandLine.arguments
 
 
-print(args)
+//print(main.arguments)
 
 
 if args.count < 2 {
@@ -53,7 +53,7 @@ func upload(ukey: String, api_key: String, data: NSData?) {
 
 
 
-func buildAndUpload(projectPath: String) {
+func buildAndUpload(projectPath: String, isUpload: Bool) {
     
     let pgyerModel = JSONFileManager.getPgyerModel(path: projectPath + "/HHSSJJ.json")
     let archivepath = projectPath + "/123.xcarchive"
@@ -66,9 +66,13 @@ func buildAndUpload(projectPath: String) {
         try runAndPrint(bash: "cd " + projectPath + ";xcodebuild -exportArchive -archivePath " + archivepath + " -exportPath " + ipapath + " -exportFormat IPA -exportProvisioningProfile " + " \"" + pgyerModel.cerName! + "\"")
         print("Package successful ---- " + ipapath)
         let data: NSData? = NSData.init(contentsOfFile: ipapath)
-        upload(ukey: pgyerModel.uKey!, api_key: pgyerModel._api_key!, data: data)
+        if isUpload {
+            upload(ukey: pgyerModel.uKey!, api_key: pgyerModel._api_key!, data: data)
+        } else {
+            exit(0)
+        }
     } catch {
-        print("Clean failure!")
+        print("Failure: ", error)
         exit(0)
     }
 }
@@ -81,14 +85,39 @@ func upload(projectPath: String) {
     upload(ukey: pgyerModel.uKey!, api_key: pgyerModel._api_key!, data: data)
 }
 
+func help() {
+    print("")
+    print("|---- Usage: ----------------------------|")
+    print("|                                        |")
+    print("| 1. Use -init to creat json file.       |")
+    print("| 2. Modify json file to you config.     |")
+    print("|                                        |")
+    print("|---- Commands: -------------------------|")
+    print("|                                        |")
+    print("| -init  init json file.                 |")
+    print("| -bu    build and upload to pgyer.      |")
+    print("| -b     build.                          |")
+    print("| -up    upload to pgyer.                |")
+    print("| -h     print help.                     |")
+    print("|________________________________________|")
+    print("")
+    exit(0)
+}
+
+
+
 switch one {
 case "-init":
     JSONFileManager.initAJSONFile(path: args[2])
 case "-bu":
-    buildAndUpload(projectPath: args[2])
+    buildAndUpload(projectPath: args[2], isUpload: true)
+case "-b":
+    buildAndUpload(projectPath: args[2], isUpload: false)
 case "-up":
     print("---- uploading ---")
     upload(projectPath: args[2])
+case "-h":
+    help()
     
 default:
     exitAndWaring(message: "输入有误")
