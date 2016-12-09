@@ -13,8 +13,29 @@ let args = CommandLine.arguments
 //print(main.arguments)
 
 
+func help() {
+    print("")
+    print("|---- Usage: ----------------------------|")
+    print("|                                        |")
+    print("| 1. Use -init to creat json file.       |")
+    print("| 2. Modify json file to you config.     |")
+    print("|                                        |")
+    print("|---- Commands: -------------------------|")
+    print("|                                        |")
+    print("| -init  init json file.                 |")
+    print("| -bu    build and upload to pgyer.      |")
+    print("| -b     build.                          |")
+    print("| -up    upload to pgyer.                |")
+    print("| -h     print help.                     |")
+    print("|________________________________________|")
+    print("")
+    exit(0)
+}
+
+
 if args.count < 2 {
     print("Input error!")
+    help()
     exit(0)
 }
 
@@ -85,24 +106,6 @@ func upload(projectPath: String) {
     upload(ukey: pgyerModel.uKey!, api_key: pgyerModel._api_key!, data: data)
 }
 
-func help() {
-    print("")
-    print("|---- Usage: ----------------------------|")
-    print("|                                        |")
-    print("| 1. Use -init to creat json file.       |")
-    print("| 2. Modify json file to you config.     |")
-    print("|                                        |")
-    print("|---- Commands: -------------------------|")
-    print("|                                        |")
-    print("| -init  init json file.                 |")
-    print("| -bu    build and upload to pgyer.      |")
-    print("| -b     build.                          |")
-    print("| -up    upload to pgyer.                |")
-    print("| -h     print help.                     |")
-    print("|________________________________________|")
-    print("")
-    exit(0)
-}
 
 
 
@@ -118,9 +121,8 @@ case "-up":
     upload(projectPath: args[2])
 case "-h":
     help()
-    
 default:
-    exitAndWaring(message: "输入有误")
+    help()
 }
 
 
