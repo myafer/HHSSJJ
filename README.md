@@ -3,11 +3,11 @@ Swift 版上传蒲公英 控制台工具
 
 # 使用步骤
 
-1. 运行程序(可以将build好的程序保存到所需打包的根目录，下次使用会更方便)。
-2. cd 到`HHSSJJ`目录 运行 ` ./HHSSJJ -init 工程根目录 ` 可以初始化json。
+1. 运行程序可以将build好的程序copy到`/usr/local/bin`。
+2. 运行 ` HHSSJJ -init 工程根目录 ` 可以初始化json。
 3. 修改HHSSJJ.json里面的配置。
-4. ` ./HHSSJJ -bu 工程根目录 ` 打包并上传到蒲公英。
-5. ` ./HHSSJJ -up 工程根目录 ` 第4步上传失败，执行此命令可以重新上传。
+4. ` HHSSJJ -bu 工程根目录 ` 打包并上传到蒲公英。
+5. ` HHSSJJ -up 工程根目录 ` 第4步上传失败，执行此命令可以重新上传。
 
 # HHSSJJ.json的配置
 

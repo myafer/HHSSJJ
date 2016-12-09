@@ -16,7 +16,7 @@ let args = CommandLine.arguments
 
 
 func help() {
-    print("\u{1B}[30)m", terminator: "")
+    print("\u{1B}[35)m", terminator: "")
     print("|---- Usage: ----------------------------|")
     print("|                                        |")
     print("\u{1B}[31)m", terminator: "")
