@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		424B75191DF8F8B300E4BB54 /* Bash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B750E1DF8F8B300E4BB54 /* Bash.swift */; };
-		424B751A1DF8F8B300E4BB54 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B750F1DF8F8B300E4BB54 /* Command.swift */; };
-		424B751B1DF8F8B300E4BB54 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75101DF8F8B300E4BB54 /* Context.swift */; };
-		424B751C1DF8F8B300E4BB54 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75111DF8F8B300E4BB54 /* FileHandle.swift */; };
-		424B751D1DF8F8B300E4BB54 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75121DF8F8B300E4BB54 /* Files.swift */; };
-		424B751E1DF8F8B300E4BB54 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75131DF8F8B300E4BB54 /* Stream.swift */; };
-		424B751F1DF8F8B300E4BB54 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75141DF8F8B300E4BB54 /* String.swift */; };
-		424B75201DF8F8B300E4BB54 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75151DF8F8B300E4BB54 /* Array.swift */; };
-		424B75211DF8F8B300E4BB54 /* Lazy-split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75161DF8F8B300E4BB54 /* Lazy-split.swift */; };
+		389CA061260744E0009B7AF6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CA056260744DE009B7AF6 /* String.swift */; };
+		389CA062260744E0009B7AF6 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CA058260744DE009B7AF6 /* Array.swift */; };
+		389CA063260744E0009B7AF6 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CA059260744DE009B7AF6 /* Files.swift */; };
+		389CA064260744E0009B7AF6 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CA05A260744DF009B7AF6 /* Context.swift */; };
+		389CA065260744E0009B7AF6 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CA05C260744DF009B7AF6 /* Stream.swift */; };
+		389CA066260744E0009B7AF6 /* Lazy-split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CA05D260744DF009B7AF6 /* Lazy-split.swift */; };
+		389CA067260744E0009B7AF6 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CA05E260744E0009B7AF6 /* Command.swift */; };
+		389CA068260744E0009B7AF6 /* Bash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CA05F260744E0009B7AF6 /* Bash.swift */; };
+		389CA069260744E0009B7AF6 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CA060260744E0009B7AF6 /* Process.swift */; };
 		424B75261DF8F9A200E4BB54 /* JSONFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B75251DF8F9A200E4BB54 /* JSONFileManager.swift */; };
 		42528E7B1DEEA3100050178B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42528E7A1DEEA3100050178B /* main.swift */; };
 		42528EA91DEEABBE0050178B /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42528E881DEEABBE0050178B /* AFHTTPSessionManager.m */; };
@@ -48,17 +48,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		424B750E1DF8F8B300E4BB54 /* Bash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Bash.swift; sourceTree = "<group>"; };
-		424B750F1DF8F8B300E4BB54 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Command.swift; sourceTree = "<group>"; };
-		424B75101DF8F8B300E4BB54 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Context.swift; sourceTree = "<group>"; };
-		424B75111DF8F8B300E4BB54 /* FileHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandle.swift; sourceTree = "<group>"; };
-		424B75121DF8F8B300E4BB54 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
-		424B75131DF8F8B300E4BB54 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
-		424B75141DF8F8B300E4BB54 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		424B75151DF8F8B300E4BB54 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = General/Array.swift; sourceTree = "<group>"; };
-		424B75161DF8F8B300E4BB54 /* Lazy-split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Lazy-split.swift"; path = "General/Lazy-split.swift"; sourceTree = "<group>"; };
+		389CA056260744DE009B7AF6 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		389CA058260744DE009B7AF6 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		389CA059260744DE009B7AF6 /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		389CA05A260744DF009B7AF6 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		389CA05C260744DF009B7AF6 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		389CA05D260744DF009B7AF6 /* Lazy-split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lazy-split.swift"; sourceTree = "<group>"; };
+		389CA05E260744E0009B7AF6 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		389CA05F260744E0009B7AF6 /* Bash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bash.swift; sourceTree = "<group>"; };
+		389CA060260744E0009B7AF6 /* Process.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		424B75251DF8F9A200E4BB54 /* JSONFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileManager.swift; sourceTree = "<group>"; };
-		42528E771DEEA3100050178B /* HHSSJJ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HHSSJJ; sourceTree = BUILT_PRODUCTS_DIR; };
+		42528E771DEEA3100050178B /* hsj */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hsj; sourceTree = BUILT_PRODUCTS_DIR; };
 		42528E7A1DEEA3100050178B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		42528E871DEEABBE0050178B /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		42528E881DEEABBE0050178B /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
@@ -107,18 +107,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		389CA057260744DE009B7AF6 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				389CA058260744DE009B7AF6 /* Array.swift */,
+			);
+			name = General;
+			path = "../../../../../../Downloads/SwiftShell-master/Sources/SwiftShell/General";
+			sourceTree = "<group>";
+		};
+		389CA05B260744DF009B7AF6 /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				389CA05C260744DF009B7AF6 /* Stream.swift */,
+				389CA05D260744DF009B7AF6 /* Lazy-split.swift */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
 		424B75181DF8F8B300E4BB54 /* SwiftShell */ = {
 			isa = PBXGroup;
 			children = (
-				424B750E1DF8F8B300E4BB54 /* Bash.swift */,
-				424B750F1DF8F8B300E4BB54 /* Command.swift */,
-				424B75101DF8F8B300E4BB54 /* Context.swift */,
-				424B75111DF8F8B300E4BB54 /* FileHandle.swift */,
-				424B75121DF8F8B300E4BB54 /* Files.swift */,
-				424B75131DF8F8B300E4BB54 /* Stream.swift */,
-				424B75141DF8F8B300E4BB54 /* String.swift */,
-				424B75151DF8F8B300E4BB54 /* Array.swift */,
-				424B75161DF8F8B300E4BB54 /* Lazy-split.swift */,
+				389CA05F260744E0009B7AF6 /* Bash.swift */,
+				389CA05E260744E0009B7AF6 /* Command.swift */,
+				389CA05A260744DF009B7AF6 /* Context.swift */,
+				389CA059260744DE009B7AF6 /* Files.swift */,
+				389CA057260744DE009B7AF6 /* General */,
+				389CA060260744E0009B7AF6 /* Process.swift */,
+				389CA05B260744DF009B7AF6 /* Stream */,
+				389CA056260744DE009B7AF6 /* String.swift */,
 			);
 			name = SwiftShell;
 			path = "../SwiftShell-master/Sources/SwiftShell";
@@ -135,7 +152,7 @@
 		42528E781DEEA3100050178B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42528E771DEEA3100050178B /* HHSSJJ */,
+				42528E771DEEA3100050178B /* hsj */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,7 +242,7 @@
 			);
 			name = HHSSJJ;
 			productName = HHSSJJ;
-			productReference = 42528E771DEEA3100050178B /* HHSSJJ */;
+			productReference = 42528E771DEEA3100050178B /* hsj */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -251,6 +268,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 42528E6E1DEEA30F0050178B;
@@ -271,29 +289,29 @@
 				42528EB51DEEABBE0050178B /* UIProgressView+AFNetworking.m in Sources */,
 				424B75261DF8F9A200E4BB54 /* JSONFileManager.swift in Sources */,
 				42528EAB1DEEABBE0050178B /* AFSecurityPolicy.m in Sources */,
-				424B751F1DF8F8B300E4BB54 /* String.swift in Sources */,
-				424B751D1DF8F8B300E4BB54 /* Files.swift in Sources */,
+				389CA064260744E0009B7AF6 /* Context.swift in Sources */,
 				42528EB61DEEABBE0050178B /* UIRefreshControl+AFNetworking.m in Sources */,
 				42528EB41DEEABBE0050178B /* UIImageView+AFNetworking.m in Sources */,
 				42528EB71DEEABBE0050178B /* UIWebView+AFNetworking.m in Sources */,
-				424B75211DF8F8B300E4BB54 /* Lazy-split.swift in Sources */,
-				424B751B1DF8F8B300E4BB54 /* Context.swift in Sources */,
-				424B751A1DF8F8B300E4BB54 /* Command.swift in Sources */,
-				424B751C1DF8F8B300E4BB54 /* FileHandle.swift in Sources */,
+				389CA068260744E0009B7AF6 /* Bash.swift in Sources */,
 				42528E7B1DEEA3100050178B /* main.swift in Sources */,
 				42528EB31DEEABBE0050178B /* UIButton+AFNetworking.m in Sources */,
-				424B751E1DF8F8B300E4BB54 /* Stream.swift in Sources */,
-				424B75191DF8F8B300E4BB54 /* Bash.swift in Sources */,
 				42528EB01DEEABBE0050178B /* AFImageDownloader.m in Sources */,
+				389CA069260744E0009B7AF6 /* Process.swift in Sources */,
+				389CA062260744E0009B7AF6 /* Array.swift in Sources */,
+				389CA066260744E0009B7AF6 /* Lazy-split.swift in Sources */,
+				389CA065260744E0009B7AF6 /* Stream.swift in Sources */,
 				42528EB21DEEABBE0050178B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				42528EAC1DEEABBE0050178B /* AFURLRequestSerialization.m in Sources */,
 				42528EB11DEEABBE0050178B /* AFNetworkActivityIndicatorManager.m in Sources */,
+				389CA061260744E0009B7AF6 /* String.swift in Sources */,
 				42528EAE1DEEABBE0050178B /* AFURLSessionManager.m in Sources */,
 				42528EAA1DEEABBE0050178B /* AFNetworkReachabilityManager.m in Sources */,
 				42528EAD1DEEABBE0050178B /* AFURLResponseSerialization.m in Sources */,
-				424B75201DF8F8B300E4BB54 /* Array.swift in Sources */,
+				389CA063260744E0009B7AF6 /* Files.swift in Sources */,
 				42528EA91DEEABBE0050178B /* AFHTTPSessionManager.m in Sources */,
 				42528EAF1DEEABBE0050178B /* AFAutoPurgingImageCache.m in Sources */,
+				389CA067260744E0009B7AF6 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,10 +412,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4FGU9379L5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = hsj;
 				SWIFT_OBJC_BRIDGING_HEADER = "HHSSJJ/HHSSJJ-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -407,9 +425,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4FGU9379L5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = hsj;
 				SWIFT_OBJC_BRIDGING_HEADER = "HHSSJJ/HHSSJJ-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

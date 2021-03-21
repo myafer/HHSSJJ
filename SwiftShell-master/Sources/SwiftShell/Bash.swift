@@ -1,79 +1,96 @@
 /*
-* Released under the MIT License (MIT), http://opensource.org/licenses/MIT
-*
-* Copyright (c) 2015 Kåre Morstøl, NotTooBad Software (nottoobadsoftware.com)
-*
-*/
+ * Released under the MIT License (MIT), http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2015 Kåre Morstøl, NotTooBad Software (nottoobadsoftware.com)
+ *
+ */
 
 import Foundation
 
 // MARK: Bash
 
-extension ShellRunnable {
+extension CommandRunning {
+	@available(*, unavailable, message: "Use `run(bash: ...).stdout` instead.")
+	@discardableResult public func run(bash bashcommand: String, combineOutput: Bool = false) -> String {
+		fatalError()
+	}
 
-	func createTask (bash bashcommand: String) -> Process {
-		return createTask("/bin/bash", args: ["-c", bashcommand])
+	/// Runs a bash shell command.
+	///
+	/// - parameter bashcommand: the bash shell command.
+	/// - parameter combineOutput: if true then stdout and stderror go to the same stream. Default is false.
+	@discardableResult public func run(bash bashcommand: String, combineOutput: Bool = false) -> RunOutput {
+		run("/bin/bash", "-c", bashcommand, combineOutput: combineOutput)
 	}
 
 	/**
-	Shortcut for bash shell command, returns output and errors as a String.
+	 Runs bash command and returns before it is finished.
 
-	- parameter bashcommand: the bash shell command.
-	- returns: standard output and standard error in one string, trimmed of whitespace and newline if it is single-line.
-	*/
-	@discardableResult public func run (bash bashcommand: String, file: String = #file, line: Int = #line) -> String {
-		return outputFromRun(createTask(bash: bashcommand), file: file, line: line)
+	 - parameter bashcommand: the bash shell command.
+	 */
+	public func runAsync(bash bashcommand: String, file: String = #file, line: Int = #line) -> AsyncCommand {
+		runAsync("/bin/bash", "-c", bashcommand, file: file, line: line)
 	}
 
 	/**
-	Run bash command and return before it is finished.
+	 Runs bash command and returns before it is finished.
+	 Any output is printed to standard output and standard error, respectively.
 
-	- parameter bashcommand: the bash shell command.
-	- returns: an AsyncShellTask struct with standard output, standard error and a 'finish' function.
-	*/
-	public func runAsync (bash bashcommand: String) -> AsyncShellTask {
-		return AsyncShellTask(process: createTask(bash: bashcommand))
+	 - parameter bashcommand: the bash shell command.
+	 */
+	public func runAsyncAndPrint(bash bashcommand: String, file: String = #file, line: Int = #line) -> PrintedAsyncCommand {
+		runAsyncAndPrint("/bin/bash", "-c", bashcommand, file: file, line: line)
 	}
 
 	/**
-	Run bash command and print output and errors.
+	 Runs bash command and prints output and errors.
 
-	- parameter bashcommand: the bash shell command.
-	- throws: a ShellError.ReturnedErrorCode if the return code is anything but 0.
-	*/
-	public func runAndPrint (bash bashcommand: String) throws {
-		let process = createTask(bash: bashcommand)
-		process.launch()
-		try process.finish()
+	 - parameter bashcommand: the bash shell command.
+	 - throws: a CommandError.returnedErrorCode if the return code is anything but 0.
+	 */
+	public func runAndPrint(bash bashcommand: String) throws {
+		try runAndPrint("/bin/bash", "-c", bashcommand)
 	}
 }
 
-/**
-Shortcut for bash shell command, returns output and errors as a String.
+@available(*, unavailable, message: "Use `run(bash: ...).stdout` instead.")
+@discardableResult public func run(bash bashcommand: String, combineOutput: Bool = false) -> String {
+	fatalError()
+}
 
-- parameter bashcommand: the bash shell command.
-- returns: standard output and standard error in one string, trimmed of whitespace and newline if it is single-line.
-*/
-@discardableResult public func run (bash bashcommand: String, file: String = #file, line: Int = #line) -> String {
-	return main.run(bash: bashcommand, file: file, line: line)
+/// Runs a bash shell command.
+///
+/// - parameter bashcommand: the bash shell command.
+/// - parameter combineOutput: if true then stdout and stderror go to the same stream. Default is false.
+@discardableResult public func run(bash bashcommand: String, combineOutput: Bool = false) -> RunOutput {
+	main.run(bash: bashcommand, combineOutput: combineOutput)
 }
 
 /**
-Run bash command and return before it is finished.
+ Runs bash command and returns before it is finished.
 
-- parameter bashcommand: the bash shell command.
-- returns: an AsyncShellTask struct with standard output, standard error and a 'finish' function.
-*/
-public func runAsync (bash bashcommand: String) -> AsyncShellTask {
-	return main.runAsync(bash: bashcommand)
+ - parameter bashcommand: the bash shell command.
+ */
+public func runAsync(bash bashcommand: String, file: String = #file, line: Int = #line) -> AsyncCommand {
+	main.runAsync(bash: bashcommand, file: file, line: line)
 }
 
 /**
-Run bash command and print output and errors.
+ Runs bash command and returns before it is finished.
+ Any output is printed to standard output and standard error, respectively.
 
-- parameter bashcommand: the bash shell command.
-- throws: a ShellError.ReturnedErrorCode if the return code is anything but 0.
-*/
-public func runAndPrint (bash bashcommand: String) throws {
-	return try main.runAndPrint(bash: bashcommand)
+ - parameter bashcommand: the bash shell command.
+ */
+public func runAsyncAndPrint(bash bashcommand: String, file: String = #file, line: Int = #line) -> PrintedAsyncCommand {
+	main.runAsyncAndPrint(bash: bashcommand, file: file, line: line)
+}
+
+/**
+ Runs bash command and prints output and errors.
+
+ - parameter bashcommand: the bash shell command.
+ - throws: a CommandError.returnedErrorCode if the return code is anything but 0.
+ */
+public func runAndPrint(bash bashcommand: String) throws {
+	try main.runAndPrint(bash: bashcommand)
 }

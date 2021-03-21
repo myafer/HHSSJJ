@@ -11,7 +11,7 @@ import Cocoa
 class JSONFileManager: NSObject {
     
     static func initAJSONFile(path: String?) {
-        print(path)
+        print(path ?? "")
         run(bash: "cd " + path! + "; touch HHSSJJ.json")
         initJSONDataString(path: path!)
     }

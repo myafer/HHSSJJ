@@ -59,7 +59,7 @@ func upload(ukey: String, api_key: String, data: NSData?) {
     manager.post("http://www.pgyer.com/apiv1/app/upload", parameters: ["uKey": ukey, "_api_key":api_key], constructingBodyWith: { (formData) in
         let dd:AFMultipartFormData = (formData as AFMultipartFormData)
         if data != nil {
-            dd.appendPart(withFileData: data as! Data, name: "file", fileName: "123.ipa", mimeType: "")
+            dd.appendPart(withFileData: data! as Data, name: "file", fileName: "123.ipa", mimeType: "")
         } else {
             print("Can not find ipa!")
             exit(0)
@@ -68,7 +68,7 @@ func upload(ukey: String, api_key: String, data: NSData?) {
             print((pro as Progress).fractionCompleted)
             
         }, success: { (task, obj) in
-            print(obj)
+            print(obj ?? "")
             print("Successful upload to pgyer!")
             
             exit(0)
@@ -106,7 +106,7 @@ func buildAndUpload(projectPath: String, isUpload: Bool) {
 
 
 func upload(projectPath: String) {
-    let pgyerModel = JSONFileManager.getPgyerModel(path: projectPath + "/HHSSJJ.json")
+    let pgyerModel = JSONFileManager.getPgyerModel(path: projectPath + "/hsj.json")
     let ipapath = projectPath + "/123.ipa"
     let data: NSData? = NSData.init(contentsOfFile: ipapath)
     upload(ukey: pgyerModel.uKey!, api_key: pgyerModel._api_key!, data: data)

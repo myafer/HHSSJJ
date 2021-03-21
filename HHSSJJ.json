@@ -1,0 +1,9 @@
+{ 
+
+ "proPath"  : "Your project path!", 
+ "scheme"   : "Your project scheme ", 
+ "cerName"  : "Your cer name", 
+ "uKey"     : "Your pgyer uKey", 
+ "_api_key" : "Your pgyer _api_key " 
+ 
+}
